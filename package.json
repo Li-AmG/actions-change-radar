@@ -1,0 +1,17 @@
+{
+  "name": "actions-change-radar",
+  "version": "0.1.0",
+  "description": "Turn GitHub Actions platform changes into an actionable repository migration report.",
+  "type": "module",
+  "bin": {
+    "actions-change-radar": "src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "scan:self": "node src/cli.js . --format markdown"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

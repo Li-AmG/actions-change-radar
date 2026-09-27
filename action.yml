@@ -1,0 +1,21 @@
+name: Actions Change Radar
+description: Scan workflows and local actions for GitHub platform changes and risky compatibility gaps.
+author: Li-AmG
+branding:
+  icon: radar
+  color: purple
+inputs:
+  path:
+    description: Repository directory to scan
+    required: false
+    default: .
+  fail-on:
+    description: Minimum severity that fails the action (error, warning, or never)
+    required: false
+    default: error
+outputs:
+  findings:
+    description: Total number of findings
+runs:
+  using: node24
+  main: src/action.js

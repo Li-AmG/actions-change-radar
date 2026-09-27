@@ -1,0 +1,42 @@
+[
+  {
+    "id": "GH-2026-NODE20",
+    "title": "Local JavaScript action still declares node20",
+    "severity": "error",
+    "effectiveDate": "2026-09-23",
+    "source": "https://github.blog/changelog/2026-09-23-node-20-is-no-longer-available-in-github-actions/",
+    "remediation": "Migrate the local action runtime to node24 and test it on supported runners."
+  },
+  {
+    "id": "GH-ACTIONS-MUTABLE-REF",
+    "title": "Third-party action or reusable workflow uses a mutable ref",
+    "severity": "warning",
+    "effectiveDate": "2026-09-03",
+    "source": "https://github.blog/changelog/2026-09-03-codeql-2-26-4-improves-github-actions-security-detections/",
+    "remediation": "Pin third-party actions and reusable workflows to a full commit SHA and document the release tag in a comment."
+  },
+  {
+    "id": "GH-PR-TARGET-HEAD",
+    "title": "pull_request_target workflow may execute untrusted pull-request code",
+    "severity": "error",
+    "effectiveDate": "2026-07-28",
+    "source": "https://github.blog/changelog/2026-07-28-github-actions-holds-potentially-malicious-workflows-for-approval/",
+    "remediation": "Do not checkout or execute the pull request head in a privileged pull_request_target workflow."
+  },
+  {
+    "id": "GH-SELF-HOSTED-FLOOR",
+    "title": "Self-hosted runner requires an explicit update plan",
+    "severity": "warning",
+    "effectiveDate": "2026-09-25",
+    "source": "https://github.blog/changelog/2026-06-12-github-actions-minimum-version-enforcement-timeline-for-self-hosted-runners/",
+    "remediation": "Confirm automatic runner updates or document monitoring for GitHub's enforced minimum version."
+  },
+  {
+    "id": "GH-LEGACY-COMMAND",
+    "title": "Workflow uses a retired set-output command",
+    "severity": "error",
+    "effectiveDate": "2023-05-31",
+    "source": "https://github.blog/changelog/2022-10-10-github-actions-deprecating-save-state-and-set-output-commands/",
+    "remediation": "Write step outputs to the GITHUB_OUTPUT environment file."
+  }
+]
