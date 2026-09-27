@@ -1,0 +1,49 @@
+name: Bug report
+description: Report an incorrect, missing, or unclear scan result
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve Actions Change Radar. Please remove secrets and private repository details from examples.
+  - type: input
+    id: version
+    attributes:
+      label: Action version
+      description: Tag or commit SHA used in the workflow.
+      placeholder: v0.1.1 or f25165c...
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result type
+      options:
+        - False positive
+        - Missed finding
+        - Action failure
+        - Unclear message or remediation
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Minimal sanitized example
+      description: Include the smallest workflow or action.yml fragment that reproduces the problem.
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and logs
+      description: Paste only relevant output with tokens and private data removed.
+    validations:
+      required: true
