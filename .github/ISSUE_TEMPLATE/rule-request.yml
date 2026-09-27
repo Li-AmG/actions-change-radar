@@ -1,0 +1,46 @@
+name: Rule request
+description: Propose a testable rule based on an official GitHub platform change
+title: "[Rule]: "
+labels:
+  - enhancement
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Official GitHub source
+      description: Link to the GitHub Changelog or official documentation that announces the change.
+      placeholder: https://github.blog/changelog/...
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Effective or enforcement date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: signal
+    attributes:
+      label: Detectable repository signal
+      description: Explain what static pattern the scanner can identify without sending repository contents elsewhere.
+    validations:
+      required: true
+  - type: textarea
+    id: unsafe
+    attributes:
+      label: Minimal affected example
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: remediation
+    attributes:
+      label: Expected remediation
+    validations:
+      required: true
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: False-positive risks or tradeoffs
+      description: Describe legitimate configurations that could look similar.
