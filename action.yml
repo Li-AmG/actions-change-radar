@@ -2,7 +2,7 @@ name: Actions Change Radar
 description: Scan workflows and local actions for GitHub platform changes and risky compatibility gaps.
 author: Li-AmG
 branding:
-  icon: radar
+  icon: activity
   color: purple
 inputs:
   path:
