@@ -1,5 +1,8 @@
 # Actions Change Radar
 
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-Actions%20Change%20Radar-blue?logo=github)](https://github.com/marketplace/actions/actions-change-radar)
+[![CI](https://github.com/Li-AmG/actions-change-radar/actions/workflows/test.yml/badge.svg)](https://github.com/Li-AmG/actions-change-radar/actions/workflows/test.yml)
+
 GitHub changes Actions continuously. A workflow can remain unchanged while its runner, JavaScript runtime, security assumptions, or supported commands change underneath it.
 
 Actions Change Radar turns dated GitHub platform changes into a local repository report. It scans workflow YAML and local action metadata, links every finding to an official source, and suggests a concrete migration. It has no runtime dependencies, needs no token, sends no telemetry, and never uploads repository content.
@@ -44,13 +47,21 @@ jobs:
   radar:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-      - uses: Li-AmG/actions-change-radar@v0.1.0
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: Li-AmG/actions-change-radar@v0
         with:
           fail-on: error
 ```
 
 The Action adds annotations and a Markdown job summary. `fail-on` accepts `error`, `warning`, or `never`.
+
+`v0` follows the latest compatible 0.x release. Security-sensitive repositories can pin the immutable commit for v0.1.1:
+
+```yaml
+- uses: Li-AmG/actions-change-radar@f25165ce5bcc7feb7d857cb7476f2f8beb562322 # v0.1.1
+```
+
+See a live integration in [`Li-AmG/spam-risk-reviewer`](https://github.com/Li-AmG/spam-risk-reviewer/actions/workflows/actions-change-radar.yml).
 
 ## Why this is different
 
